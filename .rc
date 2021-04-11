@@ -1,0 +1,44 @@
+#!/usr/bin/env sh
+
+mf ()
+{
+	for s in "${@}";
+	do
+		if [ -e "${s}" ];
+		then
+			printf "${s}: file exists\n";
+		else
+			:> "${s}";
+			printf '\n' >> ${s};
+		fi;
+	done;
+}; # mf, mkfl, makefiles
+# mf	make files
+# touch tempers with the timestamps. mkfile does not create empty files. Sometimes, that's all you need.
+
+#md ()
+#{
+#	n=${1};
+#	i=0;
+#
+#	for (( i = 0; i <= ${n}; i++ ));
+#	do
+#		mkdir "ex${i}";
+#		printf '\n' >> ${i};
+#	done;
+#}; # 
+alias md='for i in {00..20}; do mkdir "ex${i}"; done;';
+
+alias k='[ -e ./0 ] && rm 0; gcc -o 0 *.c && ./0 && rm 0;';
+
+alias d='cd';
+
+alias c="printf '\033[2J\033[3J\033[1;1H';"; #alias cls=
+
+# .rc
+# Karl's runcom
+# 
+# Karl `kvpb`
+# Qwasar: https://upskill.us.qwasar.io/users/bertin_k
+# 
+# 
